@@ -1,0 +1,165 @@
+/* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(270deg, #1c1c2b, #3d3d5c, #1c1c2b, #3d3d5c);
+  background-size: 800% 800%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  position: relative;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  25% {
+      background-position: 50% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  75% {
+      background-position: 50% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(270deg, #1c1c2b, #3d3d5c, #1c1c2b, #3d3d5c);
+  background-size: 800% 800%;
+  animation: gradient 30s ease infinite;
+}
+
+.stars, .twinkling, .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: url('stars.png') repeat;
+  z-index: 0;
+  animation: move-stars 50s linear infinite, star-move 30s ease-in-out infinite;
+}
+
+@keyframes move-stars {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-1000px);
+  }
+}
+
+@keyframes star-move {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.twinkling {
+  background: url('twinkling.png') repeat;
+  z-index: 1;
+  animation: move-twinkling 100s linear infinite, twinkling-move 30s ease-in-out infinite;
+}
+
+@keyframes move-twinkling {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-1000px);
+  }
+}
+
+@keyframes twinkling-move {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-20px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.overlay {
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+  z-index: 2;
+}
+
+.bio {
+  position: absolute;
+  top: 20%;
+  z-index: 3;
+  text-align: center;
+  color: #fda085;
+  font-family: 'Pacifico', cursive;
+  animation: fadeIn 3s ease-in-out;
+  line-height: 1.5em;
+}
+
+.bio h1 {
+  font-size: 3em;
+  margin: 0.5em 0;
+}
+
+.bio p {
+  font-size: 1.5em;
+  margin: 0.2em 0;
+  animation: fadeIn 5s ease-in-out;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10%;
+  z-index: 3;
+}
+
+#digital-clock {
+  font-size: 2.5em;
+  font-family: 'Pacifico', cursive;
+  color: #fda085;
+  animation: fadeIn 5s ease-in-out;
+}
+
+#location {
+  font-size: 2.5em;
+  font-family: 'Pacifico', cursive;
+  color: #fda085;
+  animation: fadeIn 5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
